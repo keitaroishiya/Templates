@@ -1,0 +1,38 @@
+/*
+# Resets
+
+多くのプロジェクトでリセット、変更する可能性が高いスタイルを追記している。
+
+*/
+
+ /*
+ * Reset browser default styles.
+ */
+
+h1,h2,h3,h4,h5,h6,p,ul,ol,dl {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-weight: normal;
+  font-size: inherit;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+dd {
+  margin-left: 0;
+}
+
+img {
+  vertical-align: top;
+}
+
+button {
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+}

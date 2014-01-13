@@ -1,0 +1,14 @@
+{
+  "name": "RESPONSIVE",
+  "version": "0.0.1",
+  "dependencies": {
+    "grunt": "0.4.1",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-watch": "*"
+  },
+  "devDependencies": {
+    "grunt-contrib-compass": "~0.2.0"
+  },
+  "repository": "/",
+  "author": "KI"
+}
