@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sign In</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <form class="form-search" role="form">
+        <h2 class="heading">ユーザー検索</h2>
+
+        <!-- ↓↓↓ テキスト入力 ↓↓↓ -->
+        <dl class="search leafix mb10">
+          <dt class="left search-key">ニックネーム</dt>
+          <dd>
+            <input type="name" class="form-control left" placeholder="ニックネーム" required autofocus>
+            <span class="left">※一部またはすべてを入力</span>
+          </dd>
+        </dl>
+        <!-- ↑↑↑ テキスト入力 ↑↑↑ -->
+
+        <!-- ↓↓↓ ラジオボタン ↓↓↓ -->
+        <dl class="search cleafix mb10">
+          <dt class="left search-key">性別</dt>
+          <dd>
+            <label class="checkbox left">
+              <input type="radio" class="radio" name="sex" value="male">男
+            </label>
+            <label class="checkbox left">
+              <input type="radio" class="radio" name="sex" value="female">女
+            </label>
+          </dd>
+        </dl>
+        <!-- ↑↑↑ ラジオボタン ↑↑↑ -->
+
+        <!-- ↓↓↓ テキスト入力 ↓↓↓ -->
+        <dl class="search cleafix mb10">
+          <dt class="left search-key">Facebook ID</dt>
+          <dd>
+            <input type="text" class="form-control left" placeholder="" required>
+          </dd>
+        </dl>
+        <!-- ↑↑↑ テキスト入力 ↑↑↑ -->
+
+        <!-- ↓↓↓ Eメール ↓↓↓ -->
+        <dl class="search cleafix mb10">
+          <dt class="left search-key">メールアドレス</dt>
+          <dd>
+            <input type="email" class="form-control left" placeholder="" required>
+          </dd>
+        </dl>
+        <!-- ↑↑↑ Eメール ↑↑↑ -->
+
+        <!-- ↓↓↓ ラジオボタン ↓↓↓ -->
+        <dl class="search cleafix mb10">
+          <dt class="left search-key">運営用ユーザー</dt>
+          <dd>
+            <label class="label left">
+              <input type="radio" class="radio" name="admin-user" value="male">含む
+            </label>
+            <label class="label left">
+              <input type="radio" class="radio" name="admin-user" value="female">含まない
+            </label>
+          </dd>
+        </dl>
+        <!-- ↑↑↑ ラジオボタン ↑↑↑ -->
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">上記条件で検索実行</button>
+      </form>
+
+    </div> <!-- /container -->
+
+
+    <div class="container">
+
+      <form class="form-edit" role="form">
+        <h2 class="heading">ユーザー情報詳細 / 編集</h2>
+        
+        <!-- ↓↓↓ ボックス ↓↓↓ -->
+        <dl class="search leafix mb10">
+          <dt class="left search-key">ユーザーID</dt>
+          <dd>
+            abcd1234
+          </dd>
+        </dl>
+        <!-- ↑↑↑ ボックス ↑↑↑ -->
+
+        <dl class="search leafix mb10">
+          <dt class="left search-key">ニックネーム</dt>
+          <dd>
+            <input type="name" class="form-control left" placeholder="ニックネーム">
+          </dd>
+        </dl>
+
+        <!-- ↓↓↓ プルダウン ↓↓↓ -->
+        <dl class="search leafix mb10">
+          <dt class="left search-key">職業</dt>
+          <dd>
+            <select id="select-occupation" class="selectpicker left mr10" name="select-occupation">
+                <option value="1">IT</option>
+                <option value="2">学生</option>
+                <option value="3">飲食</option>
+            </select>
+            <input type="name" class="form-control left" placeholder="">
+          </dd>
+        </dl>
+        <!-- ↑↑↑ プルダウン ↑↑↑ -->
+
+        <!-- ↓↓↓ 文章入力 ↓↓↓ -->
+        <dl class="search cleafix mb10">
+          <dt class="left search-key">自己紹介文</dt>
+          <dd>
+            <textarea id="profile-text" name="profile-text" class="form-control left" placeholder="" rows="4" cols="40"></textarea>
+          </dd>
+        </dl>
+        <!-- ↑↑↑ 文章入力 ↑↑↑ -->
+
+        <!-- ↓↓↓ チェックボックス ↓↓↓ -->
+        <dl class="search cleafix mb10">
+          <dt class="left search-key">チャームポイント</dt>
+          <dd>
+            <label class="label left mr20">
+              <input type="checkbox" class="checkbox" name="admin-user" value="big">大きな目
+            </label>
+            <label class="label left mr20">
+              <input type="checkbox" class="checkbox" name="admin-user" value="doublr">バッチリ二重
+            </label>
+            <label class="label left mr20">
+              <input type="checkbox" class="checkbox" name="admin-user" value="semi-double">奥二重
+            </label>
+            <label class="label left mr20">
+              <input type="checkbox" class="checkbox" name="admin-user" value="single">一重
+            </label>
+            <label class="label left mr20">
+              <input type="checkbox" class="checkbox" name="admin-user" value="glasses">メガネ
+            </label>
+          </dd>
+        </dl>
+        <!-- ↑↑↑ チェックボックス ↑↑↑ -->
+
+        <!-- ↓↓↓ ファイル ↓↓↓ -->
+        <dl class="search cleafix mb10">
+          <dt class="left search-key">写真</dt>
+          <dd>
+            <input type="file" class="left">
+          </dd>
+        </dl>
+        <!-- ↑↑↑ ファイル ↑↑↑ -->
+
+        <button class="btn btn-lg btn-primary left mr20" type="submit">上記の内容で保存する</button>
+        <button class="btn btn-lg btn-danger left" type="submit">アカウントを利用停止</button>
+      </form>
+    </div>
+
+
+
+    <div class="container">
+      <form class="form-edit" role="form">
+        <h2 class="heading">ユーザー検索一案</h2>
+
+        <a href="#" class="btn btn-lg btn-default right">再検索</a>
+        <a href="#" class="btn btn-lg btn-primary right mr10">条件入力画面へ戻る</a>
+
+        <!-- ↓↓↓ テーブル ↓↓↓ -->
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>ニックネーム</th>
+                <th>性別</th>
+                <th>Facebook ID</th>
+                <th>メールアドレス</th>
+                <th>最終ログイン</th>
+                <th>編集</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Taro Yamada</td>
+                <td>男</td>
+                <td>1234</td>
+                <td>a@b.com</td>
+                <td>2014/1/1 12:34:56</td>
+                <td><button id="delete1" class="btn btn-sm btn-danger left" type="submit">削除する</button></td>
+              </tr>
+              <tr>
+                <td>Yoko Tanaka</td>
+                <td>女</td>
+                <td>5678</td>
+                <td>c@d.com</td>
+                <td>2014/1/2 12:34:56</td>
+                <td><button id="delete2" class="btn btn-sm btn-danger left" type="submit">削除する</button></td>
+              </tr>
+              <tr>
+                <td>Hirotaka Ito</td>
+                <td>男</td>
+                <td>9191</td>
+                <td>e@f.com</td>
+                <td>2014/1/3 12:34:56</td>
+                <td><button id="delete3" class="btn btn-sm btn-danger left" type="submit">削除する</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- ↑↑↑ テーブル ↑↑↑ -->
+
+        <!-- ↓↓↓ ページネーション ↓↓↓ -->
+        <div>
+          <ul class="pagination center">
+            <li class="disabled"><a href="#">«</a></li>
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">»</a></li>
+          </ul>
+        </div>
+        <!-- ↑↑↑ ページネーション ↑↑↑ -->
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  </body>
+</html>
