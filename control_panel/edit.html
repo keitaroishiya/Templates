@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ユーザー検索</title>
+    <title>ユーザー情報詳細 / 編集</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -83,81 +83,97 @@
           <!-- ↓↓↓ パンくず ↓↓↓ -->
           <ul class="breadcrumb">
             <li><a href="#">管理画面</a></li>
-            <li class="active">ユーザー検索</li>
+            <li class="active">ユーザー情報詳細 / 編集</li>
           </ul>
           <!-- ↑↑↑ パンくず ↑↑↑ -->
 
           <!-- ↓↓↓ タイトル ↓↓↓ -->
           <div class="clearfix">
-            <a href="#" class="btn btn-lg btn-default right">再検索</a>
-            <a href="#" class="btn btn-lg btn-primary right mr10">条件入力画面へ戻る</a>
-            <h1 class="page-header">ユーザー検索</h1>
+            <h1 class="page-header">ユーザー情報詳細 / 編集</h1>
           </div>
           <!-- ↑↑↑ タイトル ↑↑↑ -->
 
           <div class="container">
 
-            <form class="form-search" role="form">
+            <form class="form-edit" role="form">
+              
+              <!-- ↓↓↓ ボックス ↓↓↓ -->
+              <dl class="search clearfix">
+                <dt class="left search-key">ユーザーID</dt>
+                <dd>
+                  abcd1234
+                </dd>
+              </dl>
+              <!-- ↑↑↑ ボックス ↑↑↑ -->
 
-              <!-- ↓↓↓ テキスト入力 ↓↓↓ -->
               <dl class="search clearfix">
                 <dt class="left search-key">ニックネーム</dt>
                 <dd>
-                  <input type="name" class="autowidth form-control left" placeholder="ニックネーム" required autofocus>
-                  <span class="left mt5 ml10">※一部またはすべてを入力</span>
+                  <input type="name" class="autowidth left" placeholder="ニックネーム">
                 </dd>
               </dl>
-              <!-- ↑↑↑ テキスト入力 ↑↑↑ -->
 
-              <!-- ↓↓↓ ラジオボタン ↓↓↓ -->
+              <!-- ↓↓↓ プルダウン ↓↓↓ -->
               <dl class="search clearfix">
-                <dt class="left search-key">性別</dt>
+                <dt class="left search-key">職業</dt>
                 <dd>
-                  <label class="left mr30">
-                    <input type="radio" class="mr5" name="sex" value="male">男
-                  </label>
-                  <label class="left">
-                    <input type="radio" class="mr5" name="sex" value="female">女
-                  </label>
+                  <select id="select-occupation" class="selectpicker left mr20" name="select-occupation">
+                      <option value="1">IT</option>
+                      <option value="2">学生</option>
+                      <option value="3">飲食</option>
+                  </select>
+                  <input type="name" class="autowidth left" placeholder="会社名">
                 </dd>
               </dl>
-              <!-- ↑↑↑ ラジオボタン ↑↑↑ -->
+              <!-- ↑↑↑ プルダウン ↑↑↑ -->
 
-              <!-- ↓↓↓ テキスト入力 ↓↓↓ -->
+              <!-- ↓↓↓ 文章入力 ↓↓↓ -->
               <dl class="search clearfix">
-                <dt class="left search-key">Facebook ID</dt>
+                <dt class="left search-key">自己紹介文</dt>
                 <dd>
-                  <input type="text" class="autowidth form-control left" placeholder="" required>
+                  <textarea id="profile-text" name="profile-text" class="half left mb20" placeholder="" rows="4" cols="40"></textarea>
                 </dd>
               </dl>
-              <!-- ↑↑↑ テキスト入力 ↑↑↑ -->
+              <!-- ↑↑↑ 文章入力 ↑↑↑ -->
 
-              <!-- ↓↓↓ Eメール ↓↓↓ -->
+              <!-- ↓↓↓ チェックボックス ↓↓↓ -->
               <dl class="search clearfix">
-                <dt class="left search-key">メールアドレス</dt>
+                <dt class="left search-key">チャームポイント</dt>
                 <dd>
-                  <input type="email" class="half form-control left" placeholder="" required>
+
+                  <div class="controls">
+                    <label class="checkbox inline left mr30 mt0">
+                      <input type="checkbox" class="" name="admin-user" value="big">大きな目
+                    </label>
+                    <label class="checkbox inline left mr30 mt0">
+                      <input type="checkbox" class="" name="admin-user" value="doublr">バッチリ二重
+                    </label>
+                    <label class="checkbox inline left mr30 mt0">
+                      <input type="checkbox" class="" name="admin-user" value="semi-double">奥二重
+                    </label>
+                    <label class="checkbox inline left mr30 mt0">
+                      <input type="checkbox" class="" name="admin-user" value="single">一重
+                    </label>
+                    <label class="checkbox inline left mr30 mt0">
+                      <input type="checkbox" class="" name="admin-user" value="glasses">メガネ
+                    </label>
+                  </div>
                 </dd>
               </dl>
-              <!-- ↑↑↑ Eメール ↑↑↑ -->
+              <!-- ↑↑↑ チェックボックス ↑↑↑ -->
 
-              <!-- ↓↓↓ ラジオボタン ↓↓↓ -->
+              <!-- ↓↓↓ ファイル ↓↓↓ -->
               <dl class="search clearfix">
-                <dt class="left search-key">運営用ユーザー</dt>
+                <dt class="left search-key">写真</dt>
                 <dd>
-                  <label class="left mr30">
-                    <input type="radio" class="mr5" name="admin-user" value="male">含む
-                  </label>
-                  <label class="left">
-                    <input type="radio" class="mr5" name="admin-user" value="female">含まない
-                  </label>
+                  <input type="file" class="left">
                 </dd>
               </dl>
-              <!-- ↑↑↑ ラジオボタン ↑↑↑ -->
+              <!-- ↑↑↑ ファイル ↑↑↑ -->
 
-              <button class="btn btn-lg btn-primary" type="submit">上記条件で検索実行</button>
+              <button class="btn btn-lg btn-primary left mr20" type="submit">上記の内容で保存する</button>
+              <button class="btn btn-lg btn-danger left" type="submit">アカウントを利用停止</button>
             </form>
-
           </div> <!-- /container -->
 
         </div>
