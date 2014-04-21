@@ -42,15 +42,15 @@ strong,
   color: $primaryTextColor;
 }
 
-/* 
-# Modules 
+/*
+# Modules
 */
 @import "display/large";
 @import "display/middle";
 @import "display/small";
 
 
-/* 
+/*
 # 共通のベーススタイルの定義。
 */
 $footerHeight: 30px;
@@ -58,7 +58,7 @@ $footerHeight: 30px;
   min-height: 300px - $footerHeight;
   @media (min-height: 640px - $footerHeight) {
     min-height: 640px - $footerHeight;
-  } 
+  }
 }
 
 ol {
@@ -72,7 +72,7 @@ ol li {
   margin-top: 8px;
 }
 
-/* 
+/*
 # Media
 
 画像とテキスト（またその他）が並ぶパターン。
@@ -103,7 +103,7 @@ ol li {
   overflow:hidden;
 }
 
-/* 
+/*
 # Page
 */
 
@@ -141,7 +141,7 @@ ol li {
 
 @import "helper";
 
-/* 
+/*
 # State
 
 状態を表すスタイル。
@@ -167,3 +167,21 @@ ol li {
 
 @import "animations";
 
+/*
+## sprites
+
+spriteの定義。
+
+*/
+$sprites-layout: smart; // $sprite画像のディレクトリ（sprites）-属性（layout）: 値（smart）
+$sprites-spacing: 2px;
+@import "sprites/*.png";
+$sprites: sprite-map("sprites/*.png");
+@include all-sprites-sprites();
+
+//sprite画像のディレクトリを使ったテスト例
+.sprites-sprite {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+}

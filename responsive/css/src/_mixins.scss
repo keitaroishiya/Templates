@@ -1,13 +1,13 @@
-/* 
+/*
 # Functions & Mixins
 */
 
-/* 
+/*
 ## Functions
 
 */
 
-/* 
+/*
 `propety: half($value);`
 
 数値を半分する関数。（小数点は切り上げ
@@ -25,7 +25,7 @@
    @return ceil($value / 2);
 }
 
-/* 
+/*
 ## Mixins
 */
 
@@ -201,7 +201,7 @@ CSS3などベンダープレフィックスが必要なプロパティのヘル�
 
 // Sample
 // $map-hoge: sprite-map("/img/sprite/hoge/*.png", $layout: horizontal);
-// 
+//
 // .sprt-a { @include sprite(parent, $map-hoge); }
 // .sprt-a-bird1 { @include sprite(child, $map-hoge, bird1); }
 // .sprt-a-bird2 { @include sprite(child, $map-hoge, bird2); }
