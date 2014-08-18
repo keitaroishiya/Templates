@@ -1,0 +1,181 @@
+/* Base */
+@import "base/normalize";
+@import "base/resets";
+
+/* Mixins */
+@import "mixins";
+
+/* Compass */
+$experimental-support-for-opera: false;
+$experimental-support-for-mozilla: false;
+$experimental-support-for-microsoft: false;
+@import "compass";
+
+/* Variables */
+// Colors
+$basicBorderColor: #656565;
+$primaryBorderColor: #f121a0;
+$primaryTextColor: #ff00a2;
+
+// for grunt-replace
+// CSS内から呼び出している画像のキャッシュを管理したい場合に、パスの後ろに付ける
+// $timestamp: "?@@timestamp";
+
+/* Elements */
+body {
+  color: #444444;
+  @include Hiragino;
+  line-height: 1.5;
+  font-size: 14px;
+  background-color: #FFFFFF;
+  // background-image: url("../img/bg.png");
+  @include background-size(150px 150px);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+strong,
+.strong {
+  color: $primaryTextColor;
+}
+
+/*
+# Modules
+*/
+@import "display/large";
+@import "display/middle";
+@import "display/small";
+
+
+/*
+# 共通のベーススタイルの定義。
+*/
+$footerHeight: 30px;
+#page {
+  min-height: 300px - $footerHeight;
+}
+
+ol {
+  padding-left: 22px;
+}
+ol ol {
+  padding-left: 16px;
+  list-style-type: lower-roman;
+}
+ol li {
+  margin-top: 8px;
+}
+
+/*
+# Media
+
+画像とテキスト（またその他）が並ぶパターン。
+
+```
+<div class="media clearfix>
+  <img src="..." width="94" height="94" class="media-img">
+  <p class="media-body">ここに文章がはいる</p>
+</div>
+```
+*/
+.media{
+  @extend .clearfix;
+  display:block;
+}
+.media-img {
+  float:left;
+  margin-right: 10px;
+  &.right { // Reverse
+    margin-right: 0;
+    margin-left: 10px;
+  }
+  > img {
+    display:block;
+  }
+}
+.media-body{
+  overflow:hidden;
+}
+
+/*
+# Page
+*/
+
+.contents {
+  overflow-x: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  width: 320px;
+  // background-color: #FFF8FD;
+}
+
+#footer {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 320px;
+  text-align: center;
+  li {
+    display: inline-block;
+    + li {
+      @include pe;
+      padding-left: 3px;
+      border-left: 1px dotted #FFFFFF;
+    }
+  }
+  a {
+    padding: 10px 5px;
+    color: #FFFFFF;
+  }
+}
+
+@import "helper";
+
+/*
+# State
+
+状態を表すスタイル。
+グローバルに使いそうなものを定義する。
+
+*/
+
+.is-hidden {
+  display: none !important;
+}
+
+.is-loading {
+  border: 0 !important;
+  background-color: transparent !important;
+  background-image: url("../img/loading.gif");
+  @include background-size(30px 24px);
+  background-repeat: no-repeat;
+  background-position: center;
+  text-indent: -9999px; // Hide text
+  text-shadow: none; // Hide text
+  color: transparent; // Hide text
+}
+
+@import "animations";
+
+/*
+## sprites
+
+spriteの定義。
+
+*/
+$sprites-layout: smart; // $sprite画像のディレクトリ（sprites）-属性（layout）: 値（smart）
+$sprites-spacing: 2px;
+@import "sprites/*.png";
+$sprites: sprite-map("sprites/*.png");
+@include all-sprites-sprites();
+
+//sprite画像のディレクトリを使ったテスト例
+.sprites-sprite {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+}

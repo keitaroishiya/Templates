@@ -1,0 +1,35 @@
+/* 
+# Animations
+
+アニメーション表現スタイル。
+アニメーション関連のクラスにはすべて`anim`接頭辞をつける。
+
+*/
+
+/* Bourbon animation mixin */
+@import "bourbon/bourbon";
+
+.anim {
+  @include animation(anim-scale 1.2s ease-out 1);
+  @include transform-origin(50% 50%);
+  // -webkit-backface-visibility: hidden; // Enhanced Animation speed
+}
+
+@include keyframes(anim-scale) {
+  0% {-webkit-transform: scale(0, 0); }
+  40% { -webkit-transform: scale(1.3, 1.3); }
+  60% { -webkit-transform: scale(1, 1); }
+  80% { -webkit-transform: scale(1.2, 1.2); }
+  100% { -webkit-transform: scale(1, 1); }
+}
+
+
+@-webkit-keyframes anim-rotate360 {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+

@@ -1,0 +1,15 @@
+# User Preferences
+__*
+
+# Temporary or system files
+*.swp
+._*
+.DS_Store
+.sass-cache
+
+# Directories
+node_modules
+
+# Created by grunt tasks
+
+# Markup
