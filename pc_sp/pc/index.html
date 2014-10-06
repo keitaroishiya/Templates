@@ -42,46 +42,105 @@
 
 	<body>
 		<!-- Header -->
-		<div id="header">
-			<h1>
-				<a href="index.html">
-					<img src="img/logo_sp.png" data-src321="img/logo.png" alt="" class="img-logo">
-				</a>
+		<div id="header" class="rel">
+			<h1 class="js-img-main img-main">
+				<a class="" href="/" target="_blank"><img src="img/logo.png" class="" alt=""></a>
 			</h1>
-			<ul class="global-navi">
-				<li><a href="index.html">TOP</a></li>
-				<li class="content">
-					<a href="about.html">コンテンツ</a>
-					<ul class="sub-navi" style="display: none;">
-						<li><a href="content1.html">コンテンツ1</a></li>
-						<li><a href="content2.html">コンテンツ2</a></li>
-						<li><a href="content3.html">コンテンツ3</a></li>
-					</ul>
-				</li>
-				<li><a href="access.html">アクセス</a></li>
-				<li><a href="contact.html">お問い合わせ</a></li>
-			</ul>
+			<div class="js-gnavi gnavi-base">
+				<ul class="global-navi clearfix">
+					<li><a href="#1"><img src="img/nav_01.png" class="" alt="" ></a></li>
+					<li><a href="#2"><img src="img/nav_02.png" class="" alt=""></a></li>
+					<li><a href="#3"><img src="img/nav_03.png" class="" alt=""></a></li>
+					<li class="sns-button">
+						<div class="facebook">
+							<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.iamworks.com&amp;width=100&amp;layout=button&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=30" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:30px;" allowTransparency="true"></iframe>
+						</div>
+						<div class="twitter">
+							<a href="https://twitter.com/share" class="twitter-share-button" data-count="none">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+						</div>
+					</li>
+				</ul>
+			</div>
 		</div>
 		<!-- End Header -->
 
+		<div class="main">
 
-		<!-- Page Contents -->
-		<div id="page"></div>
-		<!-- End Page Contents -->
+			<!-- Page Contents -->
+			<div id="page">
+				<div id="1" class="section">
+					<h2 class="head"><img src="img/title1.png" class="" alt="" /></h2>
+					<div class="rel mb40">
+						<div class="slide-btn">
+							<div class="js-prev btn btn-prev"><img src="img/bt_prev.png" class="pngFix" alt="←" /></div>
+							<div class="js-next btn btn-next"><img src="img/bt_next.png" class="pngFix" alt="→" /></div>
+						</div>
+						<div class="slide-base">
+							<div class="slide-area">
+								<ul class="js-flip slide-area clearfix">
+									<li id="modal-1" class="item ml20">
+										<img src="img/img_1.jpg" alt="" class="">
+									</li>
+									<li id="modal-2" class="item ml20">
+										<img src="img/img_2.jpg" alt="" class="">
+									</li>
+									<li id="modal-3" class="item ml20">
+										<img src="img/img_3.jpg" alt="" class="">
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Popup Contents -->
+				<div class="js-overlay overlay">
+					<div class="js-overlay-bg js-close overlay-bg pngFix"></div>
+					<div class="full full-height">
+						<div class="modal-box pngFix">
+							<div class="modal-inner">
+								<div class="clearfix">
+									<img src="img/bt_pop_close.png" alt="閉じる" class="js-close pngFix btn bt-pop-close fr mb20" />
+								</div>
+
+								<!-- Handlebars.js で ポップアップのブロックを量産 -->
+								<div class="js-block"></div>
+
+							</div>
+						</div>
+					</div>
+					
+				</div>
+				<!-- End Popup Contents -->
+			</div>
+			<!-- End Page Contents -->
 
 
-		<!-- Footer -->
-		<div id="footer">
-			<div class="copyright" 
-			data-r321="Copyright &copy; Company name Inc. All Rights Reserved.">
-				<img src="img/copyright.png" width="320" alt="Copyright &copy; Company name Inc. All Rights Reserved.">
+			<!-- Footer -->
+			<div id="footer">
+				<div class="copyright">
+					Copyright(C).INC
+					<!-- <img src="img/footer.jpg" alt="" /> -->
+				</div>
+			</div>
+			<!-- End Footer -->
+
+			<div class="to-top">
+				<a href="#header"><img src="img/bt_to_top.jpg" class="" alt="ページTopへ" /></a>
 			</div>
 		</div>
-		<!-- End Footer -->
 
-		<script src="js/libs/jquery.min.js" type="text/javascript"></script>
-		<script src="js/libs/flipsnap.min.js" type="text/javascript"></script>
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js" type="text/javascript"></script>
+
+		<!--[if lte IE 8]>
+		<script src="js/libs/jquery.belatedPNG.min.js" type="text/javascript"></script>
+		<![endif]-->
+
+		<script src="js/libs/handlebars-v1.3.0.js" type="text/javascript"></script>
+		<script src="js/libs/flipsnap.js" type="text/javascript"></script>
 		<script src="js/libs/underscore.min.js" type="text/javascript"></script>
+		<script src="js/template.js" type="text/javascript"></script>
+		<script src="js/script.min.js" type="text/javascript"></script>
 	</body>
 </html>
-

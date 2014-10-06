@@ -1,8 +1,11 @@
 {
-  "name": "RESPONSIVE",
+  "name": "PC_SP",
   "version": "0.0.1",
   "dependencies": {
     "grunt": "0.4.1",
+    "grunt-contrib-handlebars": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-uglify": "*",
     "grunt-contrib-jshint": "*",
     "grunt-contrib-watch": "*"
   },

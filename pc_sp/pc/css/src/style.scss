@@ -24,12 +24,12 @@ $primaryTextColor: #ff00a2;
 /* Elements */
 body {
   color: #444444;
-  @include Hiragino;
+  // @include Hiragino;
   line-height: 1.5;
   font-size: 14px;
   background-color: #FFFFFF;
   // background-image: url("../img/bg.png");
-  @include background-size(150px 150px);
+  //@include background-size(150px 150px);
 }
 
 a {
@@ -42,12 +42,15 @@ strong,
   color: $primaryTextColor;
 }
 
+* {
+  zoom: 1;
+}
 /*
 # Modules
 */
-@import "display/large";
-@import "display/middle";
-@import "display/small";
+// @import "display/large";
+// @import "display/middle";
+// @import "display/small";
 
 
 /*
@@ -56,9 +59,6 @@ strong,
 $footerHeight: 30px;
 #page {
   min-height: 300px - $footerHeight;
-  @media (min-height: 640px - $footerHeight) {
-    min-height: 640px - $footerHeight;
-  }
 }
 
 ol {
@@ -70,6 +70,16 @@ ol ol {
 }
 ol li {
   margin-top: 8px;
+}
+
+.main {
+  width: 100%;
+  // width: 1020px;
+  margin: auto;
+}
+
+.btn {
+  cursor: pointer;
 }
 
 /*
@@ -103,6 +113,67 @@ ol li {
   overflow:hidden;
 }
 
+
+/*
+# Header
+*/
+#header {
+  // height: 622px;
+}
+
+.img-main {
+  min-width: 1020px;
+  // height: 622px;
+  position: relative;
+  background: url('../img/bg_main.jpg') no-repeat 50%;
+  // @include opacity(0);
+  // text-indent: -9999px;
+}
+
+.gnavi-base {
+  width: 100%;
+  height: 54px;
+  min-width: 1020px;
+  // position: absolute;
+  // bottom: 0;
+  // background: url('../img/bg_gnavi.png') repeat-x;
+}
+
+.global-navi {
+  width: 1020px;
+  margin: auto;
+  li {
+    float: left;
+  }
+}
+
+.logo {
+  margin: 9px 128px 0 20px;
+  display: block;
+  // position: absolute;
+}
+
+.gnavi-fixed {
+  top: 0;
+  position: fixed;
+  z-index: 50;
+}
+
+.sns-button {
+  padding: 16px 0 0 35px;
+}
+
+.twitter {
+  // margin-left: 80px;
+  float: left;
+}
+
+.facebook {
+  width: 82px;
+  float: left;
+  overflow: hidden;
+}
+
 /*
 # Page
 */
@@ -113,18 +184,225 @@ ol li {
   margin-right: auto;
   width: 320px;
   // background-color: #FFF8FD;
-  @media (min-width: 321px) {
+  // @media (min-width: 321px) {
     // @include box-shadow(0 0 2px #CCC);
+  // }
+}
+
+.section {
+  h2 {
+    text-align: center;
+    img {
+      margin: auto;
+    }
+  }
+}
+
+.slide-area {
+  width: 1020px;
+  margin: auto;
+  position: relative;
+}
+
+.item {
+  position: relative;
+  float: left;
+}
+
+/*
+# 前へボタン 次へボタン
+*/
+.btn-prev,
+.btn-next,
+.btn-prev-pop,
+.btn-next-pop {
+  position: absolute;
+  top: 238px;
+  font-size: 130%;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.btn-prev {
+  left: 60px;
+}
+.btn-next {
+  right: 60px;
+}
+
+.btn-prev-pop {
+  left: 16px;
+}
+.btn-next-pop {
+  right: 18px;
+}
+
+/*
+# エリア
+*/
+.slide-base {
+  width: 100%;
+  min-width: 1020px;
+  overflow: hidden;
+}
+
+.slide-area {
+  width: 4000px;
+  position: relative;
+}
+
+.slide-area li {
+  width: 900px;
+  height: 552px;
+}
+
+h2.slide-head {
+  padding-top: 102px;
+  padding-bottom: 50px;
+}
+
+.slide-btn {
+  width: 1020px;
+  margin: auto;
+  position: relative;
+}
+
+.img-block {
+  position: absolute;
+  overflow: hidden;
+}
+
+.slide-hover {
+  @include vendor(transform, scale(1.5));
+}
+
+/*
+# ポップアップ
+*/
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  @include opacity(0);
+}
+
+.overlay-show {
+  @include opacity(1);
+}
+
+.overlay-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  // background-color: rgb(255, 255, 255);
+  background-color: transparent !important;
+  background: url("../img/bg_white40.png");
+  background: url("../img/bg_white.gif")\9; //IE8
+  *background: url("../img/bg_white.gif");  //IE7
+  // @include opacity(0.4);
+}
+
+.modal-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 910px;
+  height: 709px;
+  margin: -355px 0 0 -455px;
+  border: 0 !important;
+  background-color: transparent !important;
+  background: url("../img/bg_popup.png") no-repeat;
+  background: url("../img/bg_popup_low.png") no-repeat\9; //IE8
+  *background: url("../img/bg_popup_low.png") no-repeat; //IE7
+  // background-color: #c00;
+  z-index: 1;
+}
+
+.modal-inner {
+  padding: 56px;
+  color: #321f0e;
+}
+
+.modal-scroller,
+.modal-scroller-photo {
+  width: 684px;
+  height: 532px;
+  margin-left: 57px;
+  position: relative;
+  overflow: hidden;
+  outline: none;
+}
+
+.modal-scroller-photo {
+  margin-left: 57px;
+}
+
+.modal-title {
+  padding-bottom: 40px;
+  text-align: center;
+  color: #4db998;
+  font-size: 160%;
+}
+
+.modal-left {
+  width: 336px;
+  float: left;
+}
+
+.modal-pager {
+  top: 420px;
+  left: 50%;
+  margin-left: -40px;
+  position: absolute;
+  li {
+    float: left;
+  }
+}
+
+.pager-off {
+  width: 12px;
+  height: 12px;
+  margin-right: 10px;
+  background: url("../img/sprites/pager_off.png") no-repeat;
+  cursor: pointer;
+}
+
+.pager-on {
+  width: 12px;
+  height: 12px;
+  margin-right: 10px;
+  background: url("../img/sprites/pager_on.png") no-repeat;
+  cursor: pointer;
+}
+
+.modal-slide-area {
+  width: 590px;
+  margin: auto;
+  position: relative;
+}
+
+.modal-area {
+  width: 4000px;
+  height: 368px;
+  position: relative;
+  li {
+    width: 590px;
+    height: 368px;
   }
 }
 
 #footer {
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  width: 320px;
+  height: 45px;
+  min-width: 1020px;
+  margin: auto;
   text-align: center;
+  background: url('../img/bg_footer.jpg') repeat-x;
+
   li {
     display: inline-block;
     + li {
@@ -137,6 +415,23 @@ ol li {
     padding: 10px 5px;
     color: #FFFFFF;
   }
+}
+
+.copyright {
+  width: 100%;
+  padding-top: 15px;
+  color: #321f0e;
+  font-size: 90%;
+}
+
+.to-top {
+  // width: 1020px;
+  margin: auto;
+  bottom: 0;
+  right: 50px;
+  position: fixed;
+  text-align: right;
+  z-index: 12;
 }
 
 @import "helper";
@@ -165,7 +460,7 @@ ol li {
   color: transparent; // Hide text
 }
 
-@import "animations";
+// @import "animations";
 
 /*
 ## sprites
@@ -173,12 +468,13 @@ ol li {
 spriteの定義。
 
 */
+/* 
 $sprites-layout: smart; // $sprite画像のディレクトリ（sprites）-属性（layout）: 値（smart）
 $sprites-spacing: 2px;
 @import "sprites/*.png";
 $sprites: sprite-map("sprites/*.png");
 @include all-sprites-sprites();
-
+ */
 //sprite画像のディレクトリを使ったテスト例
 .sprites-sprite {
   display: inline-block;
