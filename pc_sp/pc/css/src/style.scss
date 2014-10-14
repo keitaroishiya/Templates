@@ -137,15 +137,23 @@ ol li {
   // position: absolute;
   // bottom: 0;
   // background: url('../img/bg_gnavi.png') repeat-x;
+  background-color: #b0e106;
   text-align: center;
+  line-height: 0;
 }
 
-.global-navi {
+.gnavi-list {
   // width: 1020px;
-  display: inline-block;
   margin: auto;
+  display: inline-block;
+
   li {
+    margin-right: 2px;
     float: left;
+  }
+  a {
+    display: block;
+    background-color: #9c3;
   }
 }
 
@@ -201,17 +209,6 @@ ol li {
   }
 }
 
-.slide-area {
-  width: 1020px;
-  margin: auto;
-  position: relative;
-}
-
-.item {
-  position: relative;
-  float: left;
-}
-
 /*
 # 前へボタン 次へボタン
 */
@@ -245,18 +242,18 @@ ol li {
 */
 .slide-base {
   width: 100%;
-  min-width: 1020px;
+  // min-width: 1020px;
   overflow: hidden;
 }
 
 .slide-area {
   width: 4000px;
+  margin: auto;
   position: relative;
-}
-
-.slide-area li {
-  width: 900px;
-  height: 552px;
+  li {
+    width: 900px;
+    height: 552px;
+  }
 }
 
 h2.slide-head {
@@ -265,7 +262,7 @@ h2.slide-head {
 }
 
 .slide-btn {
-  width: 1020px;
+  // width: 1020px;
   margin: auto;
   position: relative;
 }
@@ -277,6 +274,11 @@ h2.slide-head {
 
 .slide-hover {
   @include vendor(transform, scale(1.5));
+}
+
+.item {
+  position: relative;
+  float: left;
 }
 
 /*
@@ -305,8 +307,8 @@ h2.slide-head {
   // background-color: rgb(255, 255, 255);
   background-color: transparent !important;
   background: url("../img/bg_white40.png");
-  background: url("../img/bg_white.gif")\9; //IE8
-  *background: url("../img/bg_white.gif");  //IE7
+  // background: url("../img/bg_white.gif")\9; //IE8
+  // *background: url("../img/bg_white.gif");  //IE7
   // @include opacity(0.4);
 }
 
@@ -320,8 +322,8 @@ h2.slide-head {
   border: 0 !important;
   background-color: transparent !important;
   background: url("../img/bg_popup.png") no-repeat;
-  background: url("../img/bg_popup_low.png") no-repeat\9; //IE8
-  *background: url("../img/bg_popup_low.png") no-repeat; //IE7
+  // background: url("../img/bg_popup_low.png") no-repeat\9; //IE8
+  // *background: url("../img/bg_popup_low.png") no-repeat; //IE7
   // background-color: #c00;
   z-index: 1;
 }
@@ -401,7 +403,7 @@ h2.slide-head {
 
 #footer {
   height: 45px;
-  min-width: 1020px;
+  // min-width: 1020px;
   margin: auto;
   text-align: center;
   background: url('../img/bg_footer.jpg') repeat-x;
