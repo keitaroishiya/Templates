@@ -12,6 +12,8 @@ $experimental-support-for-microsoft: false;
 @import "compass";
 
 /* Variables */
+$pageWidth: 320px;
+
 // Colors
 $basicBorderColor: #656565;
 $primaryBorderColor: #f121a0;
@@ -130,7 +132,7 @@ ol li {
   // text-indent: -9999px;
 }
 
-.gnavi-base {
+.gnavi {
   width: 100%;
   // height: 54px;
   // min-width: 1020px;
@@ -142,7 +144,7 @@ ol li {
   line-height: 0;
 }
 
-.gnavi-list {
+.gnavi__list {
   // width: 1020px;
   margin: auto;
   display: inline-block;
@@ -163,7 +165,7 @@ ol li {
   // position: absolute;
 }
 
-.gnavi-fixed {
+.gnavi__fixed {
   top: 0;
   position: fixed;
   z-index: 50;
@@ -238,30 +240,26 @@ ol li {
 }
 
 /*
-# エリア
+# スライドエリア
 */
-.slide-base {
+.slide__base {
   width: 100%;
   // min-width: 1020px;
   overflow: hidden;
 }
 
-.slide-area {
+.slide__area {
   width: 4000px;
   margin: auto;
   position: relative;
   li {
     width: 900px;
-    height: 552px;
+    // height: 552px;
+    text-align: center;
   }
 }
 
-h2.slide-head {
-  padding-top: 102px;
-  padding-bottom: 50px;
-}
-
-.slide-btn {
+.slide__btn {
   // width: 1020px;
   margin: auto;
   position: relative;
@@ -272,13 +270,68 @@ h2.slide-head {
   overflow: hidden;
 }
 
-.slide-hover {
+.slide__hover {
   @include vendor(transform, scale(1.5));
 }
 
 .item {
   position: relative;
   float: left;
+}
+
+/*
+# 開閉エリア
+*/
+.open-close {
+  width: 100%;
+  min-width: $pageWidth;
+  // background: url("../img/section2/bg_photo.jpg") no-repeat 50%;
+}
+
+.open-close__base {
+  width: 100%;
+  overflow: hidden;
+  background-color: #87cefa;
+}
+
+.open-close__btn {
+  width: $pageWidth;
+  // height: 737px;
+  margin: auto;
+  img {
+    padding: 10px;
+  }
+  h3 {
+    padding: 10px;
+  }
+}
+
+.open-close__wrapper,
+.open-close__contents {
+  width: $pageWidth;
+  margin: auto;
+}
+
+.open-close__border {
+  // width: $pageWidth;
+  // margin: auto;
+  // height: 1px;
+  border-top: 1px solid #fff;
+}
+
+.arrow-open {
+  width: 36px;
+  height: 36px;
+  margin: 4px;
+  float: right;
+  display: block;
+  background: url("../img/arrow-open.png") no-repeat;
+  @include background-size(36px 36px);
+}
+
+.arrow-close {
+  background: url("../img/arrow-close.png") no-repeat;
+  @include background-size(36px 36px);
 }
 
 /*
@@ -298,37 +351,44 @@ h2.slide-head {
   @include opacity(1);
 }
 
-.overlay-bg {
+.overlay__bg {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  // background-color: rgb(255, 255, 255);
-  background-color: transparent !important;
-  background: url("../img/bg_white40.png");
+  background-color: rgb(0, 0, 0);
+  // background-color: transparent !important;
+  // background: url("../img/bg_white.gif");
   // background: url("../img/bg_white.gif")\9; //IE8
   // *background: url("../img/bg_white.gif");  //IE7
-  // @include opacity(0.4);
+  @include opacity(0.9);
 }
 
-.modal-box {
+.fade-show {
+  display: block;
+  @include vendor(transition, 0.3s);
+  @include opacity(1);
+}
+
+.modal__box {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 910px;
-  height: 709px;
-  margin: -355px 0 0 -455px;
+  width: 500px;
+  height: 700px;
+  margin: -350px 0 0 -250px;
   border: 0 !important;
   background-color: transparent !important;
-  background: url("../img/bg_popup.png") no-repeat;
+  // background: url("../img/bg_popup.png") no-repeat;
   // background: url("../img/bg_popup_low.png") no-repeat\9; //IE8
   // *background: url("../img/bg_popup_low.png") no-repeat; //IE7
   // background-color: #c00;
+  text-align: center;
   z-index: 1;
 }
 
-.modal-inner {
+.modal__inner {
   padding: 56px;
   color: #321f0e;
 }
@@ -347,19 +407,19 @@ h2.slide-head {
   margin-left: 57px;
 }
 
-.modal-title {
+.modal__title {
   padding-bottom: 40px;
   text-align: center;
-  color: #4db998;
+  color: #ccc;
   font-size: 160%;
 }
 
-.modal-left {
-  width: 336px;
-  float: left;
+.modal__left {
+  // width: 336px;
+  // float: left;
 }
 
-.modal-pager {
+.modal__pager {
   top: 420px;
   left: 50%;
   margin-left: -40px;
@@ -385,13 +445,13 @@ h2.slide-head {
   cursor: pointer;
 }
 
-.modal-slide-area {
+.modal__slidearea {
   width: 590px;
   margin: auto;
   position: relative;
 }
 
-.modal-area {
+.modal__area {
   width: 4000px;
   height: 368px;
   position: relative;

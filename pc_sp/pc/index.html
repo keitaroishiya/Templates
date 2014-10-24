@@ -53,13 +53,13 @@
 					</div>
 					<div class="twitter">
 						<a href="https://twitter.com/share" class="twitter-share-button" data-count="none">Tweet</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 					</div>
 				</div>
 			</div>
-			<div class="js-gnavi gnavi-base">
-				<ul class="gnavi-list clearfix">
-					<li><a href="#1"><img src="img/nav_01.png" class="" alt="" ></a></li>
+			<div class="js-gnavi gnavi">
+				<ul class="gnavi__list clearfix">
+					<li><a href="#1"><img src="img/nav_01.png" class="" alt=""></a></li>
 					<li><a href="#2"><img src="img/nav_02.png" class="" alt=""></a></li>
 					<li><a href="#3"><img src="img/nav_03.png" class="" alt=""></a></li>
 				</ul>
@@ -73,37 +73,76 @@
 			<div id="page">
 				<div id="1" class="section">
 					<h2 class="head"><img src="img/title1.png" class="" alt="" /></h2>
-					<div class="rel mb40">
-						<div class="slide-btn">
+					<div class="slide rel mb40">
+						<div class="slide__btn">
 							<div class="js-prev btn btn-prev"><img src="img/bt_prev.png" class="pngFix" alt="←" /></div>
 							<div class="js-next btn btn-next"><img src="img/bt_next.png" class="pngFix" alt="→" /></div>
 						</div>
-						<div class="slide-base">
-							<div class="slide-area">
-								<ul class="js-flip slide-area clearfix">
-									<li id="modal-1" class="item ml20">
-										<img src="img/img_1.jpg" alt="" class="">
-									</li>
-									<li id="modal-2" class="item ml20">
-										<img src="img/img_2.jpg" alt="" class="">
-									</li>
-									<li id="modal-3" class="item ml20">
-										<img src="img/img_3.jpg" alt="" class="">
-									</li>
-								</ul>
-							</div>
+						<div class="slide__base">
+							<ul class="js-flip slide__area clearfix">
+								<li id="modal-0" class="js-modal-btn item ml20">
+									<img src="img/img_1.png" alt="" class="">
+								</li>
+								<li id="modal-1" class="js-modal-btn item ml20">
+									<img src="img/img_2.png" alt="" class="">
+								</li>
+								<li id="modal-2" class="js-modal-btn item ml20">
+									<img src="img/img_3.png" alt="" class="">
+								</li>
+							</ul>
 						</div>
+					</div>
+				</div>
+
+				<div id="2" class="section">
+					<div class="open-close rel">
+						<h2 class="open-close__title">[ OPEN / CLOSE ]</h2>
+
+						<div class="open-close__unit">
+							<div id="open-0" class="js-open-close open-close__base">
+								<div class="open-close__btn">
+									<div class="arrow-open"></div>
+									<h3>Title 1</h3>
+								</div>
+							</div>
+							<div class="open-close__wrapper">
+								<div class="js-open-close0 open-close__contents">
+									Content 1<br>
+									Content 1<br>
+									Content 1
+								</div>
+							</div>
+							<div class="open-close__border"></div>
+						</div>
+
+						<div class="open-close__unit">
+							<div id="open-1" class="js-open-close open-close__base">
+								<div class="open-close__btn">
+									<div class="arrow-open"></div>
+									<h3>Title 2</h3>
+								</div>
+							</div>
+							<div class="open-close__wrapper">
+								<div class="js-open-close1 open-close__contents">
+									Content 2<br>
+									Content 2<br>
+									Content 2
+								</div>
+							</div>
+							<div class="open-close__border"></div>
+						</div>
+
 					</div>
 				</div>
 
 				<!-- Popup Contents -->
 				<div class="js-overlay overlay">
-					<div class="js-overlay-bg js-close overlay-bg pngFix"></div>
-					<div class="full full-height">
-						<div class="modal-box pngFix">
-							<div class="modal-inner">
+					<div class="js-overlay-bg js-close overlay__bg pngFix"></div>
+					<div class="modal full full-height">
+						<div class="modal__box pngFix">
+							<div class="modal__inner">
 								<div class="clearfix">
-									<img src="img/bt_pop_close.png" alt="閉じる" class="js-close pngFix btn bt-pop-close fr mb20" />
+									<img src="img/bt_pop_close.png" alt="閉じる" class="js-close pngFix btn bt-pop-close right mb20" />
 								</div>
 
 								<!-- Handlebars.js で ポップアップのブロックを量産 -->
@@ -118,19 +157,21 @@
 			</div>
 			<!-- End Page Contents -->
 
+		</div>
+		<!-- End .main -->
 
-			<!-- Footer -->
-			<div id="footer">
-				<div class="copyright">
-					Copyright(C).INC
-					<!-- <img src="img/footer.jpg" alt="" /> -->
-				</div>
-			</div>
-			<!-- End Footer -->
 
-			<div class="to-top">
-				<a href="#header">↑ページTopへ</a>
+		<!-- Footer -->
+		<div id="footer">
+			<div class="copyright">
+				Copyright(C).INC
+				<!-- <img src="img/footer.jpg" alt="" /> -->
 			</div>
+		</div>
+		<!-- End Footer -->
+
+		<div class="to-top">
+			<a href="#header">↑ページTopへ</a>
 		</div>
 
 		<script src="http://code.jquery.com/jquery-1.11.1.min.js" type="text/javascript"></script>

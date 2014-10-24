@@ -28,14 +28,14 @@
 			window.scrollTo(0,0);
 
 			/**
-			 *レシピ領域の設定
+			 *スライド領域の設定
 			 */
 			var params = {
-				dist: 816,
+				dist: 900,
 				prev: '.js-prev',
 				next: '.js-next'
 			}
-			var flipRecipe = this.setSlide('.js-flip', params, true);
+			var flipArea = this.setSlide('.js-flip', params, true);
 
 			// モーダルポップアップの設定		
 			var modalValues = pageData.modal;
@@ -69,6 +69,9 @@
 			if(self.isltIE8){ //IE7, 8
 				// $('.pngFix').fixPng();
 			}
+
+			//開閉処理を設定
+			this.setOpenClose();
 
 			//スクロールイベント処理を設定
 			this.setScroll();
@@ -118,6 +121,28 @@
 			$v.addClass('overlay-show');
 		},
 
+		/**
+		 * 開閉
+		 */
+		setOpenClose: function() {
+			$('.js-open-close').next().find('.open-close__contents').toggle();
+			$('.js-open-close').on('click', function(e) {
+				var $this = $(this)
+				var _id = $this.attr('id').split('-')[1];
+				$('.js-open-close' + _id).slideToggle(400);
+
+				var cl = 'arrow-close';
+				var $ar = $this.find('.arrow-open');
+				if($ar.hasClass(cl)) {
+					$ar.removeClass(cl);
+				}
+				else {
+					$ar.addClass(cl);
+				}
+
+			});
+		},
+
 		//スクロール処理	
 		setScroll: function() {
 			var self = this;
@@ -129,13 +154,13 @@
 				var s = $win.scrollTop();
 				if(s > 568) {
 					if(!isFixed) {
-						$gnavi.addClass('gnavi-fixed');
+						$gnavi.addClass('gnavi__fixed');
 						isFixed = true;
 					}
 				}
 				else {
 					if(isFixed) {
-						$gnavi.removeClass('gnavi-fixed');
+						$gnavi.removeClass('gnavi__fixed');
 						isFixed = false;	
 					}
 				}
@@ -155,10 +180,11 @@
 		setMouseover: function() {
 			this.hoverSetting('a', 0.6);
 			this.hoverSetting('.bt-pop-close', 0.6);
-			this.hoverSetting('.recipe-btn img', 0.8);
 			this.hoverSetting('.sqr-list li', 0.7);
 			this.hoverSetting('.btn-prev-pop', 0.8);
 			this.hoverSetting('.btn-next-pop', 0.8);
+			this.hoverSetting('.btn-prev', 0.6);
+			this.hoverSetting('.btn-next', 0.6);
 		},
 
 		hoverSetting: function(key, out) {
