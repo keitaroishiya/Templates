@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Base */
 @import "base/normalize";
 @import "base/resets";
@@ -6,9 +7,9 @@
 @import "mixins";
 
 /* Compass */
-$experimental-support-for-opera: false;
-$experimental-support-for-mozilla: false;
-$experimental-support-for-microsoft: false;
+// $experimental-support-for-opera: false;
+// $experimental-support-for-mozilla: false;
+// $experimental-support-for-microsoft: false;
 @import "compass";
 
 /* Variables */
@@ -533,7 +534,7 @@ ol li {
 spriteの定義。
 
 */
-/* 
+/*
 $sprites-layout: smart; // $sprite画像のディレクトリ（sprites）-属性（layout）: 値（smart）
 $sprites-spacing: 2px;
 @import "sprites/*.png";

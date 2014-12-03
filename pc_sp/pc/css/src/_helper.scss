@@ -1,5 +1,5 @@
-
-/* 
+@charset "UTF-8";
+/*
 ## Helper
 
 Helperは任意で使える補助クラス。
@@ -29,23 +29,23 @@ Helperは任意で使える補助クラス。
 }
 
 .text-center {
-    text-align: center;
+  text-align: center;
 }
 .text-left {
-    text-align: left;
+  text-align: left;
 }
 .text-right {
-    text-align: right;
+  text-align: right;
 }
 
 .text-top {
-    vertical-align: top;
+  vertical-align: top;
 }
 .text-middle {
-    vertical-align: middle;
+  vertical-align: middle;
 }
 .text-bottom {
-    vertical-align: bottom;
+  vertical-align: bottom;
 }
 
 .full {
@@ -340,7 +340,7 @@ Helperは任意で使える補助クラス。
   max-width: 100% !important;
 }
 
-/* 
+/*
 ## Clearfix
 */
 .cf,
@@ -348,11 +348,11 @@ Helperは任意で使える補助クラス。
   *zoom:1;
   &:before,
   &:after{
-      display: table;
-      content: "";
+    display: table;
+    content: "";
   }
   &:after{
-      clear: both;
+    clear: both;
   }
 }
 
